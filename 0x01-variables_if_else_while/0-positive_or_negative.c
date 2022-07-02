@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * main -> assign a random number to the variable n each time it is executed and prints out
- * based a condition
- * return : always 0
+ * main -> assign a random number to the variable n each time it is executed
+ * and print the last digit of the number stored in the variable n
+ * Return : Always 0 (Success)
  */
 int main(void)
 {
@@ -18,7 +18,8 @@ int main(void)
 	if (n == 0)
 		printf("%d is zero\n", n);
 	if (n < 0)
+	{
 		printf("%d is negative\n", n);
+	}
 	return (0);
 }
-
