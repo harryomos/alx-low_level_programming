@@ -7,25 +7,27 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int ch;
+	int n;
 
-	for (i = 10; i <= 19; i++)
+	for (ch = 48; ch <= 57; ch++)
+
 	{
-		for (j = 10; j <= 19; j++)
+		for (n = 49; n <= 57; n++)
 		{
-			if ((j % 10) > (i % 10))
+			if (n > ch)
 			{
-				putchar((i % 10) + '0');
-					putchar((j % 10 + '0');
-							if (i != 18 || j != 19)
-							{
-							putchar(',');
-							putchar('');
-							}
-							}
-							}
-							}
-							putchar("\n");
-							return (0);
-							}
+				putchar(ch);
+				putchar(n);
+				if (ch != 56 || n != 57)
+				{
+					putchar(44)
+					putchar(32)
+				}
+			}
+		}
+	}
+	putchar(10);/*this is an ascii code for new line*/
+
+	return (0);
+}
