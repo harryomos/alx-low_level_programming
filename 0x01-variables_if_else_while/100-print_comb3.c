@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entry piont
- *
- * Return: alway return 0
+ * main -> assign a random number to the variable n each time it is executed
+ * and print the last digit of the number stored in the variable n
+ * Return: alway return 0 (Success)
  */
 int main(void)
 {
