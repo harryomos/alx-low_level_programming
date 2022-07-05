@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * islower -> ckecks if the character is lowercase
+ * _islower -> ckecks if the character is lowercase
  * @c: a character argument
  * Return: return 1 and 0 depending on condition
  */
