@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string>
+#include <stdio.h>
 
 /**
  * print_array -> prints n elements of an array of integers.
@@ -20,5 +20,6 @@ void print_array(int *a, int n)
 			printf(" ");
 		}
 	}
+	printf("\n");
 }
 
