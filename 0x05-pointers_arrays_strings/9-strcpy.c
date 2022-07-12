@@ -2,10 +2,9 @@
 
 /**
  * _strcpy -> copiar of certain number of the variable
- * @dest:
- * this the destiny
+ * @dest:this the destiny
  * @src: this is the copia
- * Return: this is return copy
+ * Return: This is return copy
  */
 char *_strcpy(char *dest. char *src)
 {
