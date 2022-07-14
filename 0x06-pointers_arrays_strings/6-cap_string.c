@@ -5,29 +5,22 @@
  * @str: string to capitalize
  * Return: returns the capitalised string
  */
-char *cap_string(char *str)
+char *cap_string(char *x)
 {
-	int index = 0;
+	char spc[] = {32, 9, '\n', ',', ';','.', '!', '?', '=', '(', ')', '{', '}'};
+	int len = 13;
+	int a = 0, i;
 
-	while (str[++index])
+	while (x[a])
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-				str[index - 1] == '\t' ||
-				str[index - 1] == '\n' ||
-				str[index - 1] == ',' ||
-				str[index - 1] == ';' ||
-				str[index - 1] == '.' ||
-				str[index - 1] == '!' ||
-				str[index - 1] == '?' ||
-				str[index - 1] == '"' ||
-				str[index - 1] == '(' ||
-				str[index - 1] == ')' ||
-				str[index - 1] == '{' ||
-				str[index - 1] == '}')
-			str[index] -= 32;
+		i = 0;
+		while (i < len)
+		{
+			if ((a == 0 || s[a -1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
+				s[a] = s[a] - 32;
+			i++;
+		}
+		a++;
 	}
 	return (str);
 }
