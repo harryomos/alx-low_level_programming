@@ -2,7 +2,7 @@
 
 /**
  * _strncpy - c function that copies a string, including the
- * terminating null byte, using at most an inputed number of bytes.
+ * terminating null byte, using at most an inputted number of bytes.
  * if the length of the source string is less than the maximum byte number,
  * the remainder  of the destination string is fllled with null bytes.
  * works identically to the standard library function 'strncpy'.
@@ -16,7 +16,7 @@ char *_strncpy(char *dest, char *src, int n);
 {
 	int i;
 
-	for (i = 0; i < n && src[i] != '\0' i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 		dest[i] = src[i];
 
 	for (; i < n; i++)
