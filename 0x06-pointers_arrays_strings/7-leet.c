@@ -14,7 +14,7 @@ char *leet(char *x)
 
 	while (x[a])
 	{
-		b - 0;
+		b = 0;
 
 		while (b < l)
 		{
@@ -26,4 +26,3 @@ char *leet(char *x)
 	}
 	return (x);
 }
-
