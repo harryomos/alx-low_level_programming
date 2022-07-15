@@ -1,26 +1,37 @@
 #include "main.h"
 
 /**
- * *cap_string - function that capitalize first character of a word
- * @str: string to capitalize
+ * cap_string - function that capitalize first character of a word
+ * @s: string to capitalize
  * Return: returns the capitalised string
  */
-char *cap_string(char *x)
+char *cap_string(char *s)
 {
-	char spc[] = {32, 9, '\n', ',', ';','.', '!', '?', '"', '(', ')', '{', '}'};
-	int len = 13;
-	int a = 0, i;
+	int x, y;
+	int trigger;
+	char nots[] = ",;.!?(){}\nt\" ";
 
-	while (x[a])
+	for (x = 0; trigger = 0; s[x] != '\0'; x++)
 	{
-		i = 0;
-		while (i < len)
+		if (s[0] > 96 && s[0] < 123)
+			trigger = 1;
+		for (y = 0; nots[y] != '\0'; y++)
 		{
-			if ((a == 0 || s[a -1] == spc[i]) && (s[a] >= 97 && s[a] <= 122))
-				s[a] = s[a] - 32;
-			i++;
+			if (nots[y] == s[x])
+				trigger = 1;
 		}
-		a++;
+		if (trigger)
+		{
+			if (s[x] > 96 && s[x] < 123)
+			{
+				s[x] -= 32;
+				trigger = 0;
+			}
+			else if (s[x] > 64 && s[x] < 91)
+				trigger = 0;
+			else if (s[x] > 47 && s[x] < 58)
+				trigger = 0;
+		}
 	}
-	return (x);
+	return (s);
 }
