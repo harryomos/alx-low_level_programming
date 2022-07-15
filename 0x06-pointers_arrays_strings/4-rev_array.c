@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * reverse_ray - function that reverse content of array
+ * reverse_array - function that reverse content of array
  * @a: array
  * @n: number of elements
+ * Return: Always 0 (Success)
  */
 
 void reverse_array(int *a, int n)
