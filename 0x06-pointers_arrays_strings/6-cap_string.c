@@ -1,37 +1,34 @@
 #include "main.h"
 
 /**
- * cap_string - function that capitalize first character of a word
- * @s: string
- * Return: s
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
+ * Return: the resulting string
  */
 char *cap_string(char *s)
 {
-	int x, y;
-	int trigger;
-	char nots[] = ",;.!?(){}\nt\" ";
+	int i, j;
 
-	for (x = 0; trigger = 0; s[x] != '\0'; x++)
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[0] > 96 && s[0] < 123)
-			trigger = 1;
-		for (y = 0; nots[y] != '\0'; y++)
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
+
+		for (j = 0; j < 13; j++)
 		{
-			if (nots[y] == s[x])
-				trigger = 1;
-		}
-		if (trigger)
-		{
-			if (s[x] > 96 && s[x] < 123)
+			if (s[i] == spe[j])
 			{
-				s[x] -= 32;
-				trigger = 0;
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
 			}
-			else if (s[x] > 64 && s[x] < 91)
-				trigger = 0;
-			else if (s[x] > 47 && s[x] < 58)
-				trigger = 0;
 		}
 	}
+
 	return (s);
 }
