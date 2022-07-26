@@ -1,55 +1,68 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
- */
-
+* _strlen - returns the lenght of a string
+*@s: poiter of character
+*Return: the length of a string
+*/
 int _strlen(char *s)
 {
-	int l = 0;
+	int len;
 
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-	return (l);
+	len = 0;
+	while (*(s + len) != '\0')
+		len++;
+	return (len);
 }
 
 /**
-* str_concat - Concat 2 strings.
-* @s1: string
-* @s2: string
-* Return: char
+* *str_concat - concatenates two strings
+*@s1: first string to concatenate
+*@s2: second string to concatenate
+*Return: the ponter to string concatenate or NULL
 */
-
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int l1, l2;
-	char *conc, *tmp;
+	int l1, l2;
+	int i, j;
+	char *empty, *concat;
 
-	if (!s1)
-		s1 = "";
-	else
-		l1 = _strlen(s1);
+	/**lets make empty strings*/
+	empty = "";
 
-	if (!s2)
-		s2 = "";
-	else
-		l2 = _strlen(s2);
+	/**comparing the enter strings*/
+	if (s1 == NULL)
+		s1 = empty;
+	if (s2 == NULL)
+		s2 = empty;
 
-	conc = malloc(l1 + l2 + 1);
-	if (!conc)
-		return (0);
+	/**Calculating the length of the strings*/
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
 
-	tmp = conc;
-	while (*s1)
-		*tmp++ = *s1++;
+	/**assign memory*/
+	/**increments l2 for the null character*/
+	l2++;
+	concat = malloc((l1 + l2) * sizeof(*concat));
 
-	while ((*tmp++ = *s2++))
-		;
+	/**verify if memory fails*/
+	if (concat == NULL)
+		return (NULL);
 
-	return (conc);
+	/**concatenate the strings*/
+	for (i = 0; i < l1; i++)
+	{
+		concat[i] = s1[i];
+	}
+
+	for (j = 0; j < l2; j++)
+	{
+		concat[i] = s2[j];
+		i++;
+	}
+	i++;
+	concat[i] = '\0';
+	return (concat);
 }
